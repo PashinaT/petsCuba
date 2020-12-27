@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://tableListPets2Browse.caption"
+        focusComponent="tableListPets2sTable"
+        messagesPack="com.company.pets.web.screens.tablelistpets2">
+    <data readOnly="true">
+        <collection id="tableListPets2sDc"
+                    class="com.company.pets.entity.TableListPets2">
+            <view extends="_local">
+                <property name="petsIdShelter" view="_minimal">
+                    <property name="nameShelter"/>
+                    <property name="addressShelter"/>
+                </property>
+            </view>
+            <loader id="tableListPets2sDl">
+                <query>
+                    <![CDATA[select e from pets_TableListPets2 e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="tableListPets2sTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="tableListPets2sTable"
+                dataLoader="tableListPets2sDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="tableListPets2sTable"
+                    width="100%"
+                    dataContainer="tableListPets2sDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="isFound"/>
+                <column id="image"/>
+                <column id="colorListPets"/>
+                <column id="viewListPets"/>
+                <column id="nameListPets"/>
+                <column id="petsIdShelter"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="tableListPets2sTable.create"/>
+                <button id="editBtn" action="tableListPets2sTable.edit"/>
+                <button id="removeBtn" action="tableListPets2sTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

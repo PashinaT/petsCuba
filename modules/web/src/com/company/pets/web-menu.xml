@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-pets" insertBefore="administration" caption="mainMsg://menu_config.application-pets">
+        <item screen="pets_Users.browse" caption="mainMsg://menu_config.pets_Users.browse"/>
+        <item screen="pets_TableShelter.browse" caption="mainMsg://menu_config.pets_TableShelter.browse"/>
+        <item screen="pets_TableListPets2.browse" caption="mainMsg://menu_config.pets_TableListPets2.browse"/>
+    </menu>
+</menu-config>

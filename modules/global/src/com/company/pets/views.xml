@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="pets_Users" name="users-view" extends="_local"/>
+   <view entity="pets_TableShelter" name="tableShelter-view" extends="_local"/>
+    <view entity="pets_TableListPets2" name="tableListPets-view" extends="_local">
+        <property name="petsIdShelter" view="_minimal">
+            <property name="nameShelter"/>
+            <property name="addressShelter"/>
+        </property>
+    </view>
+
+</views>
